@@ -1,17 +1,17 @@
 
 
-c='Congratulations!!!'
+c='Congratulations!!!'        #a variable that will be used for displaying congratulations message
 
 dot=" - "
 
-def styler(string):
+def styler(string):  #This can add a lil' bit of interactiveness to the program.
     print(string*50)
 
-def convert_to_hundred(mark,f):
+def convert_to_hundred(mark,f):   #defining a function that will convert obtained marks into range of 100 depending upon full mark for that subject too
     result=(mark/f)*100
     return result
 
-def gpa(a):
+def gpa(a):   #define a function to assign a grade point based on obtained marks(converted into 100)
     '''
     INPUT:MARKS IN EACH SUBJECT
     OUTPUT: GRADE POINT IN EACH SUBJECT
@@ -37,9 +37,9 @@ def gpa(a):
     else:
         return a
         
-consol='\t\t\t\twhich is too low\n\t\t\t\tsorry! you need to prepare well.'
+consol='\t\t\t\twhich is too low\n\t\t\t\tsorry! you need to prepare well.'   #a var. that will be used if the user's grade/percentage is below pass marks range
 
-def gpa_in_range(num):
+def gpa_in_range(num):    #check whether the gpa obtained is within range of 0 to 4 or not, else display messgae of user input error
     if num<=4 and num>=0:
         print("\t\t\t\tYour GPA  is :-   {}".format(num))
     else:
@@ -55,7 +55,7 @@ def gpa_in_range(num):
     
 
 
-def find_grade(a):
+def find_grade(a):   # function  to display letter grade based on grade point
     '''input: marks
     output: grade'''
     c='congratulations!!!!!'
@@ -82,7 +82,7 @@ def find_grade(a):
 
 
         
-def percentage_dialogue():
+def percentage_dialogue():   #function to display percentage 
     if PER>=40:
         styler(dot)
         print()
@@ -97,7 +97,7 @@ def percentage_dialogue():
         print()
     print("\n")
     
-program_active=True
+program_active=True  #creating a variable that declares program being active, this will be main trick to run the proram again in same window if the user wishes to
 
 while program_active:
     #main program:
@@ -142,12 +142,12 @@ while program_active:
     com1=com1[0].upper()
 
     
-    while com1!='Y' and com1!='N':
+    while com1!='Y' and com1!='N':    #for exception handling and to keep in track of user's input
         com1=input("\t\t\t\tSorry!!! couldnot recognize your command,\n\t\t\t\tyou must say (y/n)\n")
         com1=com1[0].upper()
 
     if com1 == 'Y':
-        print("\t\t\t\twhat is that common full marks?")
+        print("\t\t\t\twhat is that common full marks?")     #for exception handling and to keep in track of user's input
         while True:
             f=input()
             try:
@@ -175,7 +175,7 @@ while program_active:
         d=input()
         d=d[0].upper()
         while d!='Y' and d!='N':
-            d=input("\t\t\t\tSorry!!!\n\t\t\t\tcouldnot recognize your command,\n\t\t\t\tsay (y/n)\n")
+            d=input("\t\t\t\tSorry!!!\n\t\t\t\tcouldnot recognize your command,\n\t\t\t\tsay (y/n)\n")    #for exception handling and to keep in track of user's input
             d=d[0].upper()
         if d=='Y':
             math1=gpa(convert_to_hundred(math,f))
@@ -198,7 +198,7 @@ while program_active:
         else:
             print("Sorry couldn't recognize your command '%s' sir" %(d))
             
-    elif com1=='N':
+    elif com1=='N':   #if full marks is not same for all subjects
         print()
         styler(dot)
         print("\t\t\t\t *****NOW, INPUT FULL MARKS FOR EACH SUBJECTS*****")
